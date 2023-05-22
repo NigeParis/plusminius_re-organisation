@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_plus_minus_game.c                               :+:      :+:    :+:   */
+/*   ft_plus_minus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nigelrobinson <Nigel@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:20:00 by nigelrobinson     #+#    #+#             */
-/*   Updated: 2023/05/22 19:06:30 by nigelrobinson    ###   ########.fr       */
+/*   Updated: 2023/05/22 20:41:45 by nigelrobinson    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /**
@@ -52,16 +52,9 @@
 **** Definitions of functions
 */
 
-//bool	compare_answer(int mistery_number, int guess);
-//bool	ft_play_again(void);
-//bool	ft_is_not_digit(int nbr);
-
-//int	ft_level(void);
-//void	ft_print_head(void);
-//void	ft_clear_scr(void);
-//void	ft_win(int score);
-//void	ft_question(int level);
-//void	ft_bye(void);
+bool	compare_answer(int mistery_number, int guess);
+bool	ft_play_again(void);
+bool	ft_is_not_digit(int nbr);
 
 
 void    ft_print_header(void);
@@ -257,7 +250,7 @@ void	ft_print_signoff(void)
 **** level coice selecter
 */
 
-int	ft_get_difficulty_settingl()
+int	ft_get_difficulty_setting()
 {
 	int	level_choice;
 
