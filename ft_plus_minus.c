@@ -6,7 +6,7 @@
 /*   By: nigelrobinson <Nigel@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:20:00 by nigelrobinson     #+#    #+#             */
-/*   Updated: 2023/05/24 17:52:42 by nigelrobinson    ###   ########.fr       */
+/*   Updated: 2023/05/24 17:57:29 by nigelrobinson    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /**
@@ -65,7 +65,7 @@ int	ft_plus_minus(void)
 		while (playing)
 		{
 			ft_prompt_number_guess(level);
-			while (ft_is_not_digit(&guess))
+			while (ft_get_input_number(&guess))
 			{
 				fgetc(stdin);	
 				ft_print_header();
@@ -140,13 +140,12 @@ bool	ft_play_again(void)
 * Check if input in a digit
 */
 
-bool	ft_is_not_digit(int *nbr)
+bool	ft_get_input_number(int *nbr)
 {
 	if(scanf("%d", nbr) != 1)
 			  return (true);
 	return (false);
 }
-
 
 /**
 * Get difficulty level
@@ -155,7 +154,7 @@ bool	ft_is_not_digit(int *nbr)
 int	ft_get_difficulty_level(void)
 {
 	int	level_choice;
-	while ((ft_is_not_digit(&level_choice)) || ((level_choice > 3)))
+	while ((ft_get_input_number(&level_choice)) || ((level_choice > 3)))
 	{
 		fgetc(stdin);
 		ft_clear_screen();
