@@ -6,7 +6,7 @@
 /*   By: nigelrobinson <Nigel@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:20:00 by nigelrobinson     #+#    #+#             */
-/*   Updated: 2023/05/24 10:30:57 by nigelrobinson    ###   ########.fr       */
+/*   Updated: 2023/05/24 10:48:39 by nigelrobinson    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /**
@@ -41,21 +41,6 @@
 #include "ft_interface.h"
 #include "ft_plus_minus.h"
 
-/**
-** Defines
-*/
-
-#define MIN 1
-#define QUIT 0
-
-/**
-** Definitions of functions
-*/
-/**
-bool	compare_answer(int mistery_number, int guess);
-bool	ft_play_again(void);
-bool	ft_is_not_digit(int nbr);
-*/
 /**
 **** principal game function
 */
