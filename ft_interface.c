@@ -6,7 +6,7 @@
 /*   By: nigelrobinson <Nigel@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:20:00 by nigelrobinson     #+#    #+#             */
-/*   Updated: 2023/05/24 19:33:04 by nigelrobinson    ###   ########.fr       */
+/*   Updated: 2023/05/24 19:39:21 by nigelrobinson    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /**
@@ -84,20 +84,20 @@ void	ft_print_game_over(int score)
 	char line_of_stars[75];
 	char stars[5];
 	char spaces[68];
-	char space_fill[15];
-	char str_msg_1[] = "WELL DONE ! You found the number :-)";
-	char str_msg_2[] = "  Atemptes to find it !         ";
-	char str_msg_3[] = "          Do you wish to play again ?  y / n    ";
+	char padding[15];
+	char str1[] = "WELL DONE ! You found the number :-)";
+	char str2[] = "  Atemptes to find it !         ";
+	char str3[] = "          Do you wish to play again ?  y / n    ";
 
 	memset(line_of_stars, '*', 74);
 	memset(stars, '*', 4);
 	memset(spaces, ' ', 67);
-	memset(space_fill, ' ', 14);
+	memset(padding, ' ', 14);
 
 	line_of_stars[74] = 0;
 	stars[4] = 0;
 	spaces[64] = 0;
-	space_fill[13] = 0;
+	padding[13] = 0;
 
 
 	
@@ -109,11 +109,11 @@ void	ft_print_game_over(int score)
 	printf("/* %s */\n", line_of_stars);
 	printf("/* %s %s %s */\n", stars,spaces,stars);
 	printf("/* %s %s %s */\n", stars,spaces,stars);
-	printf("/* %s %s %s %s %s */\n", stars, space_fill, str_msg_1, space_fill, stars);
+	printf("/* %s %s %s %s %s */\n", stars, padding, str1, padding, stars);
 	printf("/* %s %s %s */\n", stars,spaces,stars);
-	printf("/* %s %s "NOFLASH"  %d %s"FLASH" %s %s */\n", stars, space_fill, score, str_msg_2, space_fill, stars);
+	printf("/* %s %s "NOFLASH"  %d %s"FLASH" %s %s */\n", stars, padding, score, str2, padding, stars);
 	printf("/* %s %s %s */\n", stars,spaces,stars);
-	printf("/* %s      "NOFLASH"%s"FLASH"            %s */\n",stars, str_msg_3, stars);
+	printf("/* %s      "NOFLASH"%s"FLASH"            %s */\n",stars, str3, stars);
 	printf("/* %s %s %s */\n", stars,spaces,stars);
 	printf("/* %s %s %s */\n", stars,spaces,stars);
 	printf("/* %s */\n", line_of_stars);
