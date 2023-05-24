@@ -6,7 +6,7 @@
 /*   By: nigelrobinson <Nigel@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:20:00 by nigelrobinson     #+#    #+#             */
-/*   Updated: 2023/05/24 09:13:29 by nigelrobinson    ###   ########.fr       */
+/*   Updated: 2023/05/24 09:52:23 by nigelrobinson    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /**
@@ -46,9 +46,9 @@
 
 #define MIN 1
 #define QUIT 0
-#define EASY 10
-#define NORMAL 100
-#define HARD 10000
+//#define EASY 10
+//#define NORMAL 100
+//#define HARD 10000
 
 /**
 ** Definitions of functions

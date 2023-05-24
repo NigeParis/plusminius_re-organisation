@@ -6,7 +6,7 @@
 /*   By: nigelrobinson <Nigel@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:20:00 by nigelrobinson     #+#    #+#             */
-/*   Updated: 2023/05/24 09:19:15 by nigelrobinson    ###   ########.fr       */
+/*   Updated: 2023/05/24 09:54:13 by nigelrobinson    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /**
@@ -47,23 +47,6 @@
 #define EASY 10
 #define NORMAL 100
 #define HARD 10000
-
-/**
-**** Definitions of functions
-*/
-/*
-* bool	compare_answer(int mistery_number, int guess);
-* bool	ft_play_again(void);
-* bool	ft_is_not_digit(int nbr);
-*/
-/**
-* void    ft_print_header(void);
-* void    ft_clear_screen(void);
-* void    ft_print_game_over(int score);
-* void    ft_prompt_number_guess(int level);
-* void    ft_print_signoff(void);
-* int     ft_get_difficulty_setting(void);
-*/
 
 /**
 **** Title header of the game - instructions and choice of level
