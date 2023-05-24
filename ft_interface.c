@@ -6,12 +6,12 @@
 /*   By: nigelrobinson <Nigel@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:20:00 by nigelrobinson     #+#    #+#             */
-/*   Updated: 2023/05/24 09:54:13 by nigelrobinson    ###   ########.fr       */
+/*   Updated: 2023/05/24 10:27:46 by nigelrobinson    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /**
 *
-*  Description : EXERCISE plus_minus_de_Vincent
+*  Description : GUI INTERFACE of the game plus_minus
 *
 *	Guess the number between 1 and 10000 ( three levels of difficulties
 *

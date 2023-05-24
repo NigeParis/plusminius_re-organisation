@@ -6,7 +6,7 @@
 /*   By: nigelrobinson <Nigel@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:20:00 by nigelrobinson     #+#    #+#             */
-/*   Updated: 2023/05/24 09:52:23 by nigelrobinson    ###   ########.fr       */
+/*   Updated: 2023/05/24 10:30:57 by nigelrobinson    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /**
@@ -39,6 +39,7 @@
 #include <stdbool.h>
 #include <unistd.h>
 #include "ft_interface.h"
+#include "ft_plus_minus.h"
 
 /**
 ** Defines
@@ -46,29 +47,15 @@
 
 #define MIN 1
 #define QUIT 0
-//#define EASY 10
-//#define NORMAL 100
-//#define HARD 10000
 
 /**
 ** Definitions of functions
 */
-
+/**
 bool	compare_answer(int mistery_number, int guess);
 bool	ft_play_again(void);
 bool	ft_is_not_digit(int nbr);
-
-/**
-* void    ft_print_header(void);
-* void    ft_clear_screen(void);
-* void    ft_print_game_over(int score);
-* void    ft_prompt_number_guess(int level);
-* void    ft_print_signoff(void);
-* int     ft_get_difficulty_setting(void);
 */
-
-
-
 /**
 **** principal game function
 */
