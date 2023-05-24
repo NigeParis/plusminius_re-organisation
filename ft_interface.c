@@ -8,7 +8,11 @@
 /*   Created: 2023/05/12 10:20:00 by nigelrobinson     #+#    #+#             */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*   Updated: 2023/05/24 21:33:20 by nigelrobinson    ###   ########.fr       */
+=======
+/*   Updated: 2023/05/24 19:53:27 by nigelrobinson    ###   ########.fr       */
+>>>>>>> parent of 8d4d671 (Came back to the first way of displaying screens)
 =======
 /*   Updated: 2023/05/24 19:53:27 by nigelrobinson    ###   ########.fr       */
 >>>>>>> parent of 8d4d671 (Came back to the first way of displaying screens)
@@ -90,6 +94,7 @@ void	ft_print_game_over(int score)
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	ft_clear_screen();	  
 	printf("\033[5m");
 	printf("/* *************************************");
@@ -122,6 +127,8 @@ void	ft_print_game_over(int score)
 	printf("/* ****************************************");
 	printf("********************************** */\n");
 =======
+=======
+>>>>>>> parent of 8d4d671 (Came back to the first way of displaying screens)
 =======
 >>>>>>> parent of 8d4d671 (Came back to the first way of displaying screens)
 	char line_of_stars[75];
@@ -158,6 +165,9 @@ void	ft_print_game_over(int score)
 	printf("/* %s */\n", line_of_stars);
 	printf("/* %s */\n", line_of_stars);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 8d4d671 (Came back to the first way of displaying screens)
+=======
 >>>>>>> parent of 8d4d671 (Came back to the first way of displaying screens)
 =======
 >>>>>>> parent of 8d4d671 (Came back to the first way of displaying screens)
