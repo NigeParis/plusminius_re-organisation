@@ -6,7 +6,7 @@
 /*   By: nigelrobinson <Nigel@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:20:00 by nigelrobinson     #+#    #+#             */
-/*   Updated: 2023/05/24 17:57:29 by nigelrobinson    ###   ########.fr       */
+/*   Updated: 2023/05/24 18:07:23 by nigelrobinson    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /**
@@ -30,7 +30,7 @@
 */
 
 /**
-***** headers
+* Headers
 */
 
 #include <stdbool.h>
