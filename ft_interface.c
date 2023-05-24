@@ -6,7 +6,7 @@
 /*   By: nigelrobinson <Nigel@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:20:00 by nigelrobinson     #+#    #+#             */
-/*   Updated: 2023/05/24 19:39:21 by nigelrobinson    ###   ########.fr       */
+/*   Updated: 2023/05/24 19:53:27 by nigelrobinson    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /**
@@ -78,7 +78,6 @@ void	ft_clear_screen(void)
 **** Winners window with the score.
 */
 
-
 void	ft_print_game_over(int score)
 {
 	char line_of_stars[75];
@@ -98,10 +97,6 @@ void	ft_print_game_over(int score)
 	stars[4] = 0;
 	spaces[64] = 0;
 	padding[13] = 0;
-
-
-	
-
 
 	ft_clear_screen();
 	printf(FLASH);
@@ -132,11 +127,6 @@ void	ft_prompt_number_guess(int level)
 	printf("\n                                                              ");
 	printf("\n                                                              ");
 	printf("\033[4A");
-
-    
-
-
-
 }
 
 /**
