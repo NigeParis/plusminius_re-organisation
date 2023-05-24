@@ -6,7 +6,7 @@
 /*   By: nigelrobinson <Nigel@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:20:00 by nigelrobinson     #+#    #+#             */
-/*   Updated: 2023/05/24 17:23:16 by nigelrobinson    ###   ########.fr       */
+/*   Updated: 2023/05/24 17:27:39 by nigelrobinson    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /**
@@ -63,7 +63,6 @@ int	ft_plus_minus(void)
 	ft_prompt_difficulty_setting();
 	level = ft_get_difficulty_level();
 	printf("\033[5A");
-	if(!QUIT)
 	while ((playing) && (level != QUIT))
 	{
 		mistery_number = (rand() % (level - MIN + 1) + MIN);
