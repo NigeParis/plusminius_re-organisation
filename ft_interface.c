@@ -6,7 +6,7 @@
 /*   By: nigelrobinson <Nigel@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:20:00 by nigelrobinson     #+#    #+#             */
-/*   Updated: 2023/05/24 17:49:54 by nigelrobinson    ###   ########.fr       */
+/*   Updated: 2023/05/24 18:05:16 by nigelrobinson    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /**
@@ -130,6 +130,11 @@ void	ft_prompt_difficulty_setting()
 	printf("\n                                                 (3) - HARD");
 	printf("\n            PRESS THE KEY 1, 2 OR 3 TO CHOOSE ! : ");
 }
+
+/**
+* DESCRIPTION : function displays a hint for the secret number. plus ou moins.
+* ARGS : int hint indicates what to print to screen 
+*/
 
 void	ft_print_hint(int hint)
 {
