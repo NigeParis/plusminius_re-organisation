@@ -6,7 +6,7 @@
 /*   By: nigelrobinson <Nigel@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:20:00 by nigelrobinson     #+#    #+#             */
-/*   Updated: 2023/05/24 17:27:39 by nigelrobinson    ###   ########.fr       */
+/*   Updated: 2023/05/24 17:40:32 by nigelrobinson    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /**
@@ -65,7 +65,7 @@ int	ft_plus_minus(void)
 	printf("\033[5A");
 	while ((playing) && (level != QUIT))
 	{
-		mistery_number = (rand() % (level - MIN + 1) + MIN);
+		mistery_number = ft_get_secret_random_number(level);
 		while (playing)
 		{
 			ft_prompt_number_guess(level);
@@ -88,7 +88,7 @@ int	ft_plus_minus(void)
 				{
 					playing = true;
 					score = 0;
-					mistery_number = (rand() % (level - MIN + 1) + MIN);
+					mistery_number = ft_get_secret_random_number(level);
 				}
 				else
 					playing = false;
@@ -184,3 +184,15 @@ int	ft_get_difficulty_level(void)
 	return (QUIT);
 }
 
+
+/**
+*	Returns : the secret number using random calculation
+*	ARGS :  int level is the difficulty EASY,NORMAL or HARD chosen
+*/
+
+int	ft_get_secret_random_number(int level)
+{
+	int	number;
+	number = (rand() % (level - MIN + 1) + MIN);
+	return (number);
+}

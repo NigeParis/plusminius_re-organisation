@@ -6,7 +6,7 @@
 /*   By: nigelrobinson <Nigel@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:20:00 by nigelrobinson     #+#    #+#             */
-/*   Updated: 2023/05/24 17:10:17 by nigelrobinson    ###   ########.fr       */
+/*   Updated: 2023/05/24 17:42:23 by nigelrobinson    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /**
@@ -38,15 +38,6 @@
 #include <stdbool.h>
 #include <unistd.h>
 #include "ft_interface.h"
-/**
-**** Defines
-*/
-
-#define MIN 1
-#define QUIT 0
-#define EASY 10
-#define NORMAL 100
-#define HARD 10000
 
 /**
 **** Title header of the game - instructions and choice of level

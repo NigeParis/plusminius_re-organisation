@@ -6,7 +6,7 @@
 /*   By: nigelrobinson <Nige@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 11:46:41 by nigelrobinson     #+#    #+#             */
-/*   Updated: 2023/05/24 16:53:26 by nigelrobinson    ###   ########.fr       */
+/*   Updated: 2023/05/24 17:37:25 by nigelrobinson    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 bool	compare_answer(int mistery_number, int guess);
 bool	ft_play_again(void);
 bool	ft_is_not_digit(int *nbr);
+int		ft_get_secret_random_number(int level);
 int		ft_get_difficulty_level(void);
 int		ft_plus_minus(void);
 
