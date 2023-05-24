@@ -6,7 +6,11 @@
 /*   By: nigelrobinson <Nigel@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:20:00 by nigelrobinson     #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2023/05/24 21:33:20 by nigelrobinson    ###   ########.fr       */
+=======
+/*   Updated: 2023/05/24 19:53:27 by nigelrobinson    ###   ########.fr       */
+>>>>>>> parent of 8d4d671 (Came back to the first way of displaying screens)
 /*                                                                            */
 /* ************************************************************************** */
 /**
@@ -36,6 +40,9 @@
 #include <stdbool.h>
 #include <string.h>
 #include "ft_interface.h"
+
+#define  FLASH "\033[5m\033[37m"
+#define  NOFLASH "\033[33m\033[25m"
 
 /**
 **** Title header of the game - instructions and choice of level
@@ -77,6 +84,7 @@ void	ft_clear_screen(void)
 
 void	ft_print_game_over(int score)
 {
+<<<<<<< HEAD
 	ft_clear_screen();	  
 	printf("\033[5m");
 	printf("/* *************************************");
@@ -108,6 +116,41 @@ void	ft_print_game_over(int score)
 	printf("********************************** */\n");
 	printf("/* ****************************************");
 	printf("********************************** */\n");
+=======
+	char line_of_stars[75];
+	char stars[5];
+	char spaces[68];
+	char padding[15];
+	char str1[] = "WELL DONE ! You found the number :-)";
+	char str2[] = "  Atemptes to find it !         ";
+	char str3[] = "          Do you wish to play again ?  y / n    ";
+
+	memset(line_of_stars, '*', 74);
+	memset(stars, '*', 4);
+	memset(spaces, ' ', 67);
+	memset(padding, ' ', 14);
+
+	line_of_stars[74] = 0;
+	stars[4] = 0;
+	spaces[64] = 0;
+	padding[13] = 0;
+
+	ft_clear_screen();
+	printf(FLASH);
+	printf("/* %s */\n", line_of_stars);
+	printf("/* %s */\n", line_of_stars);
+	printf("/* %s %s %s */\n", stars,spaces,stars);
+	printf("/* %s %s %s */\n", stars,spaces,stars);
+	printf("/* %s %s %s %s %s */\n", stars, padding, str1, padding, stars);
+	printf("/* %s %s %s */\n", stars,spaces,stars);
+	printf("/* %s %s "NOFLASH"  %d %s"FLASH" %s %s */\n", stars, padding, score, str2, padding, stars);
+	printf("/* %s %s %s */\n", stars,spaces,stars);
+	printf("/* %s      "NOFLASH"%s"FLASH"            %s */\n",stars, str3, stars);
+	printf("/* %s %s %s */\n", stars,spaces,stars);
+	printf("/* %s %s %s */\n", stars,spaces,stars);
+	printf("/* %s */\n", line_of_stars);
+	printf("/* %s */\n", line_of_stars);
+>>>>>>> parent of 8d4d671 (Came back to the first way of displaying screens)
 }
 
 /**
