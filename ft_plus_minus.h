@@ -6,7 +6,7 @@
 /*   By: nigelrobinson <Nige@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 11:46:41 by nigelrobinson     #+#    #+#             */
-/*   Updated: 2023/05/24 17:37:25 by nigelrobinson    ###   ########.fr       */
+/*   Updated: 2023/05/24 17:46:29 by nigelrobinson    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 # define FT_PLUS_MINUS_H
 
 # include <stdbool.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <time.h>
+# include <stdbool.h>
+# include <unistd.h>
+# include "ft_interface.h"
 
 # define MIN 1
 # define QUIT 0

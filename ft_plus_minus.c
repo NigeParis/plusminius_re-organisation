@@ -6,7 +6,7 @@
 /*   By: nigelrobinson <Nigel@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:20:00 by nigelrobinson     #+#    #+#             */
-/*   Updated: 2023/05/24 17:40:32 by nigelrobinson    ###   ########.fr       */
+/*   Updated: 2023/05/24 17:52:42 by nigelrobinson    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /**
@@ -33,11 +33,7 @@
 ***** headers
 */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 #include <stdbool.h>
-#include <unistd.h>
 #include "ft_interface.h"
 #include "ft_plus_minus.h"
 
