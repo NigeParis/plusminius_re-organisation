@@ -1,12 +1,3 @@
-MODIFICATIONS being done :
-
-In the middle of changing the game structure.
-
-Separation the GUI from main program
-
-Modification of the isdigit check function
-
-
 
 # plusminus_
 
