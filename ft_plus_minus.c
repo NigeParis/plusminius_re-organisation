@@ -6,7 +6,7 @@
 /*   By: nigelrobinson <Nigel@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:20:00 by nigelrobinson     #+#    #+#             */
-/*   Updated: 2023/05/24 14:57:14 by nigelrobinson    ###   ########.fr       */
+/*   Updated: 2023/05/24 17:23:16 by nigelrobinson    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /**
@@ -42,31 +42,32 @@
 #include "ft_plus_minus.h"
 
 /**
-**** principal game function
+* Game engine function
 */
 
 int	ft_plus_minus(void)
 {
 	int		guess;
 	int		mistery_number;
-	bool	try_to_find;
+	bool	playing;
 	int level;
 	int score;
 
 	score = 0;
 	mistery_number = 0;
 	guess = 1;
-	try_to_find = true;
+	playing = true;
 	srand(time(NULL));
 	ft_print_header();
 	level = 0;
 	ft_prompt_difficulty_setting();
 	level = ft_get_difficulty_level();
 	printf("\033[5A");
-	while ((try_to_find == true) && (level != QUIT))
+	if(!QUIT)
+	while ((playing) && (level != QUIT))
 	{
 		mistery_number = (rand() % (level - MIN + 1) + MIN);
-		while (try_to_find > 0)
+		while (playing)
 		{
 			ft_prompt_number_guess(level);
 			while (ft_is_not_digit(&guess))
@@ -77,26 +78,25 @@ int	ft_plus_minus(void)
 			}
 			if (guess == QUIT)
 			{
-				ft_clear_screen();
 				ft_print_signoff();	
 				return (0);
 			}
 			score++;
 			if (compare_answer(mistery_number, guess))
 			{
-				ft_clear_screen();
 				ft_print_game_over(score);
 				if (ft_play_again())
 				{
-					try_to_find = true;
+					playing = true;
 					score = 0;
 					mistery_number = (rand() % (level - MIN + 1) + MIN);
 				}
 				else
-					try_to_find = false;
+					playing = false;
 			}
 	 	}
 	}
+	ft_print_signoff();
 	return (0);
 }
 
@@ -111,14 +111,14 @@ bool	compare_answer(int mistery_number, int guess)
 	if (guess == mistery_number)
 		return (true);
 	if (guess > mistery_number)
-		printf("                                                              C'est moins ! \n");
+			  ft_print_hint(HIGHER);
 	if (guess < mistery_number)
-		printf("                                                               C'est plus ! \n");
+			  ft_print_hint(LOWER);
 	return (false);
 }
 
 /**
-**** Asks the question  play again ? and gets reply from user
+* Asks the question  play again ? and gets reply from user
 */
 
 bool	ft_play_again(void)
@@ -177,12 +177,11 @@ int	ft_get_difficulty_level(void)
 			return (HARD);
 		if (level_choice == 0)
 		{
-			ft_clear_screen();
 			ft_print_signoff();
 			return (QUIT);
 		}
 	}
-	ft_clear_screen();
+	ft_print_signoff();
 	return (QUIT);
 }
 

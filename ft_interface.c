@@ -6,7 +6,7 @@
 /*   By: nigelrobinson <Nigel@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:20:00 by nigelrobinson     #+#    #+#             */
-/*   Updated: 2023/05/24 14:46:24 by nigelrobinson    ###   ########.fr       */
+/*   Updated: 2023/05/24 17:10:17 by nigelrobinson    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /**
@@ -89,6 +89,8 @@ void	ft_clear_screen(void)
 
 void	ft_print_game_over(int score)
 {
+
+	ft_clear_screen();
 	printf("\033[5m");
 	printf("/* ************************************************************************** */\n");
 	printf("/* ************************************************************************** */\n");
@@ -125,6 +127,7 @@ void	ft_prompt_number_guess(int level)
 
 void	ft_print_signoff(void)
 {
+	ft_clear_screen();
 	printf("                         Thanks for playing !\n\n");
 }
 
@@ -138,4 +141,13 @@ void	ft_prompt_difficulty_setting()
 	printf("\n                                                 (2) - NORMAL");
 	printf("\n                                                 (3) - HARD");
 	printf("\n            PRESS THE KEY 1, 2 OR 3 TO CHOOSE ! : ");
+}
+
+void	ft_print_hint(int hint)
+{
+	if(hint == 1)
+		printf("                                                              C'est moins ! \n");
+	if(hint == 0)
+		printf("                                                               C'est plus ! \n");
+	  
 }

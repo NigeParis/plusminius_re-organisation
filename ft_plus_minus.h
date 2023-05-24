@@ -6,7 +6,7 @@
 /*   By: nigelrobinson <Nige@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 11:46:41 by nigelrobinson     #+#    #+#             */
-/*   Updated: 2023/05/24 14:45:34 by nigelrobinson    ###   ########.fr       */
+/*   Updated: 2023/05/24 16:53:26 by nigelrobinson    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 # define NORMAL 100
 # define HARD 10000
 
+# define HIGHER 1
+# define LOWER 0
 
 bool	compare_answer(int mistery_number, int guess);
 bool	ft_play_again(void);
