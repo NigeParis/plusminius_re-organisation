@@ -1,24 +1,24 @@
 EXEC=plusminus
 CFLAGS=-Wall -Wextra -Werror
 CC=gcc
-FF=ft_plus_minus
-GUI=ft_interface
+GAME_ENGINE=ft_plus_minus
+GAME_INTERFACE=ft_interface
 
 .PHONY: run
 run: $(EXEC)
 	./$(EXEC)
 
-$(EXEC): main.o $(FF).o $(GUI).o
+$(EXEC): main.o $(GAME_ENGINE).o $(GAME_INTERFACE).o
 	$(CC) $^ -o $(EXEC)
 
-main.o: main.c $(FF).h $(GUI).h
+main.o: main.c $(GAME_ENGINE).h $(GAME_ENGINE).h
 	$(CC) $(CFLAGS) -c main.c
 
-$(FF).o: $(FF).c
-	$(CC) $(CFLAGS) -c $(FF).c
+$(GAME_ENGINE).o: $(GAME_ENGINE).c
+	$(CC) $(CFLAGS) -c $(GAME_ENGINE).c
 
-$(GUI).o: $(GUI).c
-	$(CC) $(CFLAGS) -c $(GUI).c
+$(GAME_INTERFACE).o: $(GAME_INTERFACE).c
+	$(CC) $(CFLAGS) -c $(GAME_INTERFACE).c
 
 .PHONY: clean
 clean:

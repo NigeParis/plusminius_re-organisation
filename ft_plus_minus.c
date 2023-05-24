@@ -6,7 +6,7 @@
 /*   By: nigelrobinson <Nigel@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:20:00 by nigelrobinson     #+#    #+#             */
-/*   Updated: 2023/05/24 10:48:39 by nigelrobinson    ###   ########.fr       */
+/*   Updated: 2023/05/24 14:57:14 by nigelrobinson    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /**
@@ -60,7 +60,8 @@ int	ft_plus_minus(void)
 	srand(time(NULL));
 	ft_print_header();
 	level = 0;
-	level = ft_get_difficulty_setting();
+	ft_prompt_difficulty_setting();
+	level = ft_get_difficulty_level();
 	printf("\033[5A");
 	while ((try_to_find == true) && (level != QUIT))
 	{
@@ -68,7 +69,7 @@ int	ft_plus_minus(void)
 		while (try_to_find > 0)
 		{
 			ft_prompt_number_guess(level);
-			while (scanf("%d", &guess) != 1)
+			while (ft_is_not_digit(&guess))
 			{
 				fgetc(stdin);	
 				ft_print_header();
@@ -143,14 +144,45 @@ bool	ft_play_again(void)
 /**
 * Check if input in a digit
 */
-/**
-bool	ft_is_not_digit(int nbr)
+
+bool	ft_is_not_digit(int *nbr)
 {
-
-
-
-	return (true);
-
+	if(scanf("%d", nbr) != 1)
+			  return (true);
+	return (false);
 }
+
+
+/**
+* Get difficulty level
 */
+
+int	ft_get_difficulty_level(void)
+{
+	int	level_choice;
+	while ((ft_is_not_digit(&level_choice)) || ((level_choice > 3)))
+	{
+		fgetc(stdin);
+		ft_clear_screen();
+		ft_print_header();
+		ft_prompt_difficulty_setting();
+	}
+	while (1)
+	{
+		if (level_choice == 1)
+			return (EASY);
+		if (level_choice == 2)
+			return (NORMAL);
+		if (level_choice == 3)
+			return (HARD);
+		if (level_choice == 0)
+		{
+			ft_clear_screen();
+			ft_print_signoff();
+			return (QUIT);
+		}
+	}
+	ft_clear_screen();
+	return (QUIT);
+}
 

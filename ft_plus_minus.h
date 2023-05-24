@@ -6,7 +6,7 @@
 /*   By: nigelrobinson <Nige@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 11:46:41 by nigelrobinson     #+#    #+#             */
-/*   Updated: 2023/05/24 12:18:21 by nigelrobinson    ###   ########.fr       */
+/*   Updated: 2023/05/24 14:45:34 by nigelrobinson    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,15 @@
 
 # define MIN 1
 # define QUIT 0
+# define EASY 10
+# define NORMAL 100
+# define HARD 10000
+
 
 bool	compare_answer(int mistery_number, int guess);
 bool	ft_play_again(void);
-bool	ft_is_not_digit(int nbr);
+bool	ft_is_not_digit(int *nbr);
+int		ft_get_difficulty_level(void);
 int		ft_plus_minus(void);
 
 #endif

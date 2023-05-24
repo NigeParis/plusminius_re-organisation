@@ -6,7 +6,7 @@
 /*   By: nigelrobinson <Nigel@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:20:00 by nigelrobinson     #+#    #+#             */
-/*   Updated: 2023/05/24 10:27:46 by nigelrobinson    ###   ########.fr       */
+/*   Updated: 2023/05/24 14:46:24 by nigelrobinson    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /**
@@ -132,34 +132,10 @@ void	ft_print_signoff(void)
 **** level coice selecter
 */
 
-int	ft_get_difficulty_setting()
+void	ft_prompt_difficulty_setting()
 {
-	int	level_choice;
-
-	level_choice = 0;
 	printf("\n              Which level do you want to play    (1) - EASY");
 	printf("\n                                                 (2) - NORMAL");
 	printf("\n                                                 (3) - HARD");
 	printf("\n            PRESS THE KEY 1, 2 OR 3 TO CHOOSE ! : ");
-	while ((scanf("%d", &level_choice) != 1) || ((level_choice > 3)))
-	{
-		fgetc(stdin);
-	}
-	while (1)
-	{
-		if (level_choice == 1)
-			return (EASY);
-		if (level_choice == 2)
-			return (NORMAL);
-		if (level_choice == 3)
-			return (HARD);
-		if (level_choice == 0)
-		{
-			ft_clear_screen();
-			ft_print_signoff();
-			return (QUIT);
-		}
-	}
-	ft_clear_screen();
-	return (QUIT);
 }
