@@ -6,7 +6,7 @@
 /*   By: nigelrobinson <Nigel@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:20:00 by nigelrobinson     #+#    #+#             */
-/*   Updated: 2023/05/25 14:37:13 by nigelrobinson    ###   ########.fr       */
+/*   Updated: 2023/05/25 15:01:04 by nigelrobinson    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,9 @@
 #include "ft_plus_minus.h"
 
 /**
-* Game engine function
+* DESCRIPTION : Main game engine function
+* ARG : none
+* RETURNS : nothing
 */
 
 int	ft_plus_minus(void)
@@ -51,8 +53,6 @@ int	ft_plus_minus(void)
 	int score;
 
 	score = 0;
-	level = 0;
-	mistery_number = 0;
 	guess = 1;
 	playing = true;
 	srand(time(NULL));
@@ -77,7 +77,9 @@ int	ft_plus_minus(void)
 }
 
 /**
-**** check answer function returns true if the same as mistery number
+* DESCRIPTION : Check answer to see if the same as mistery number
+* ARGS : Takes the mistery number to be found and the users guess
+* RETURNS : true if identical and false if not
 */
 
 bool	compare_answer(int mistery_number, int guess)
@@ -104,7 +106,7 @@ bool	ft_play_again(int *score, int *mistery_number, int level)
 	read(1, &answer, 1);
 	if (answer == 'y')
 	{
-		printf("\033[25m");
+		printf(DISABLE_BLINKING);
 		ft_clear_screen();
 		ft_print_header();
 		*mistery_number = ft_get_secret_random_number(level);
@@ -113,7 +115,7 @@ bool	ft_play_again(int *score, int *mistery_number, int level)
 	}
 	else
 	{
-		printf("\033[25m");
+		printf(DISABLE_BLINKING);
 		ft_clear_screen();
 		return (false);	
 	}

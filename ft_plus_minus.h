@@ -6,7 +6,7 @@
 /*   By: nigelrobinson <Nige@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 11:46:41 by nigelrobinson     #+#    #+#             */
-/*   Updated: 2023/05/25 14:34:52 by nigelrobinson    ###   ########.fr       */
+/*   Updated: 2023/05/25 15:00:09 by nigelrobinson    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@
 # define HIGHER 1
 # define LOWER 0
 # define HIDE_LEVEL_QUESTION "\033[5A"
+# define DISABLE_BLINKING "\033[25m"
 
 bool	compare_answer(int mistery_number, int guess);
 bool	ft_play_again(int *score, int *mistery_number, int level);
