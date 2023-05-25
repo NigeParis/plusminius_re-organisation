@@ -6,9 +6,10 @@
 /*   By: nigelrobinson <Nigel@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:20:00 by nigelrobinson     #+#    #+#             */
-/*   Updated: 2023/05/24 18:07:23 by nigelrobinson    ###   ########.fr       */
+/*   Updated: 2023/05/25 13:16:25 by nigelrobinson    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 /**
 *
 *  Description : EXERCISE plus_minus_de_Vincent
@@ -64,13 +65,8 @@ int	ft_plus_minus(void)
 		mistery_number = ft_get_secret_random_number(level);
 		while (playing)
 		{
-			ft_prompt_number_guess(level);
-			while (ft_get_input_number(&guess))
-			{
-				fgetc(stdin);	
-				ft_print_header();
-				ft_prompt_number_guess(level);
-			}
+
+			ft_game_question(level, &guess);
 			if (guess == QUIT)
 			{
 				ft_print_signoff();	
@@ -190,4 +186,22 @@ int	ft_get_secret_random_number(int level)
 	int	number;
 	number = (rand() % (level - MIN + 1) + MIN);
 	return (number);
+}
+
+/**
+*	Description : Function affiches the question and gets the guess
+*
+*/
+
+void	ft_game_question(int level, int *guess)
+{
+
+			ft_prompt_number_guess(level);
+			while (ft_get_input_number(guess))
+			{
+				fgetc(stdin);	
+				ft_print_header();
+				ft_prompt_number_guess(level);
+			}
+
 }
