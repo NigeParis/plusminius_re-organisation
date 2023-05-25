@@ -6,7 +6,7 @@
 /*   By: nigelrobinson <Nigel@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:20:00 by nigelrobinson     #+#    #+#             */
-/*   Updated: 2023/05/25 13:16:25 by nigelrobinson    ###   ########.fr       */
+/*   Updated: 2023/05/25 14:37:13 by nigelrobinson    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,43 +51,28 @@ int	ft_plus_minus(void)
 	int score;
 
 	score = 0;
+	level = 0;
 	mistery_number = 0;
 	guess = 1;
 	playing = true;
 	srand(time(NULL));
 	ft_print_header();
-	level = 0;
 	ft_prompt_difficulty_setting();
 	level = ft_get_difficulty_level();
-	printf("\033[5A");
-	while ((playing) && (level != QUIT))
+	printf(HIDE_LEVEL_QUESTION);
+	mistery_number = ft_get_secret_random_number(level);
+	while (playing)
 	{
-		mistery_number = ft_get_secret_random_number(level);
-		while (playing)
+		ft_get_question_guess(level, &guess);
+		ft_print_signoff(guess);
+		score++;
+		if (compare_answer(mistery_number, guess))
 		{
-
-			ft_game_question(level, &guess);
-			if (guess == QUIT)
-			{
-				ft_print_signoff();	
-				return (0);
-			}
-			score++;
-			if (compare_answer(mistery_number, guess))
-			{
-				ft_print_game_over(score);
-				if (ft_play_again())
-				{
-					playing = true;
-					score = 0;
-					mistery_number = ft_get_secret_random_number(level);
-				}
-				else
-					playing = false;
-			}
-	 	}
+			ft_print_game_over(score);
+			playing = ft_play_again(&score, &mistery_number, level);
+		}
 	}
-	ft_print_signoff();
+	ft_print_signoff(QUIT);
 	return (0);
 }
 
@@ -112,7 +97,7 @@ bool	compare_answer(int mistery_number, int guess)
 * Asks the question  play again ? and gets reply from user
 */
 
-bool	ft_play_again(void)
+bool	ft_play_again(int *score, int *mistery_number, int level)
 {
 	char answer = '\0';
 
@@ -122,6 +107,8 @@ bool	ft_play_again(void)
 		printf("\033[25m");
 		ft_clear_screen();
 		ft_print_header();
+		*mistery_number = ft_get_secret_random_number(level);
+		*score = 0;
 		return (true);
 	}
 	else
@@ -167,11 +154,11 @@ int	ft_get_difficulty_level(void)
 			return (HARD);
 		if (level_choice == 0)
 		{
-			ft_print_signoff();
+			ft_print_signoff(QUIT);
 			return (QUIT);
 		}
 	}
-	ft_print_signoff();
+	ft_print_signoff(QUIT);
 	return (QUIT);
 }
 
@@ -189,11 +176,12 @@ int	ft_get_secret_random_number(int level)
 }
 
 /**
-*	Description : Function affiches the question and gets the guess
-*
+*	DESCRIPTION : Function call prompt question and gets the guess
+*	ARGS : takes the level of dificulty amd a pointer to the guess variable
+*	RETURNS : 
 */
 
-void	ft_game_question(int level, int *guess)
+void	ft_get_question_guess(int level, int *guess)
 {
 
 			ft_prompt_number_guess(level);

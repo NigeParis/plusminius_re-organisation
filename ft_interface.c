@@ -6,12 +6,12 @@
 /*   By: nigelrobinson <Nigel@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:20:00 by nigelrobinson     #+#    #+#             */
-/*   Updated: 2023/05/24 22:01:14 by nigelrobinson    ###   ########.fr       */
+/*   Updated: 2023/05/25 14:08:14 by nigelrobinson    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /**
 *
-*  Description : GUI INTERFACE of the game plus_minus
+*  Description : USER INTERFACE of the game plus_minus
 *
 *	Guess the number between 1 and 10000 ( three levels of difficulties
 *
@@ -112,10 +112,14 @@ void	ft_prompt_number_guess(int level)
 **** Exit sentence Saying good bye
 */
 
-void	ft_print_signoff(void)
+void	ft_print_signoff(int guess)
 {
-	ft_clear_screen();
-	printf("                         Thanks for playing !\n\n");
+	if(guess == 0)
+	{		  	  
+		ft_clear_screen();
+		printf("                         Thanks for playing !\n\n");
+		exit(0);
+	}
 }
 
 /**
