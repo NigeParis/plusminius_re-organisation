@@ -6,7 +6,7 @@
 /*   By: nigelrobinson <Nige@42.fr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 11:46:41 by nigelrobinson     #+#    #+#             */
-/*   Updated: 2023/05/25 15:00:09 by nigelrobinson    ###   ########.fr       */
+/*   Updated: 2023/05/25 17:20:14 by nigelrobinson    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 
 # define MIN 1
 # define QUIT 0
+# define NBR_LEVELS 3
 # define EASY 10
 # define NORMAL 100
 # define HARD 10000
@@ -39,6 +40,8 @@ void	ft_get_question_guess(int level, int *guess);
 int		ft_get_secret_random_number(int level);
 int		ft_get_difficulty_level(void);
 int		ft_plus_minus(void);
+int	ft_check_input_is_a_digit(char *str);
+
 
 #endif
 

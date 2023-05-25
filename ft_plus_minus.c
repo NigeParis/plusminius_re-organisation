@@ -6,7 +6,7 @@
 /*   By: nigelrobinson <Nigel@42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:20:00 by nigelrobinson     #+#    #+#             */
-/*   Updated: 2023/05/25 15:01:04 by nigelrobinson    ###   ########.fr       */
+/*   Updated: 2023/05/25 18:03:22 by nigelrobinson    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,10 @@ bool	compare_answer(int mistery_number, int guess)
 }
 
 /**
-* Asks the question  play again ? and gets reply from user
+* DESCRIPTION : Asks play again ? and gets reply from player
+* It also calls a function to create a random secret number
+* ARGS : Pointer to the score, pointer to the secret number, level
+* RETURNS : true to play again , false to quit the game.
 */
 
 bool	ft_play_again(int *score, int *mistery_number, int level)
@@ -122,26 +125,39 @@ bool	ft_play_again(int *score, int *mistery_number, int level)
 }
 
 /**
-* Check if input in a digit
+* DESCRIPTION : Gets the input guess number and checks it is a number
+* ARGS : pointer to integer
+* RETURNS : bool true if a number and if nbr is  quits the game
 */
 
 bool	ft_get_input_number(int *nbr)
 {
-	if(scanf("%d", nbr) != 1)
-			  return (true);
-	return (false);
+   char	str[20];
+	
+	while(1)
+	{		  
+	scanf("%s", str);
+	*nbr = ft_check_input_is_a_digit(str);
+	if(*nbr > 0)
+	  return (false);
+	if(*nbr == 0)
+		ft_print_signoff(QUIT);	
+	if(*nbr < 0)
+		return(true);	   
+	}
 }
 
 /**
-* Get difficulty level
+* DESCRIPTION : Gets and sets the difficulty level of the game
+* ARGS : none
+* RETURNS : A number that is the maximum limit 1 to 10, 100  or 10000
 */
 
 int	ft_get_difficulty_level(void)
 {
 	int	level_choice;
-	while ((ft_get_input_number(&level_choice)) || ((level_choice > 3)))
+	while ((ft_get_input_number(&level_choice)) || ((level_choice > NBR_LEVELS)))
 	{
-		fgetc(stdin);
 		ft_clear_screen();
 		ft_print_header();
 		ft_prompt_difficulty_setting();
@@ -164,10 +180,10 @@ int	ft_get_difficulty_level(void)
 	return (QUIT);
 }
 
-
 /**
-*	Returns : the secret number using random calculation
-*	ARGS :  int level is the difficulty EASY,NORMAL or HARD chosen
+* DESCRIPTION : Random number function with MIN and MAX
+* Returns : A secret number using the random calculation
+* ARGS :  int level is the difficulty chosen - EASY,NORMAL or HARD
 */
 
 int	ft_get_secret_random_number(int level)
@@ -178,20 +194,39 @@ int	ft_get_secret_random_number(int level)
 }
 
 /**
-*	DESCRIPTION : Function call prompt question and gets the guess
-*	ARGS : takes the level of dificulty amd a pointer to the guess variable
-*	RETURNS : 
+* DESCRIPTION : Function call prompt question and gets the guess
+* ARGS : takes the level of dificulty amd a pointer to the guess variable
+* RETURNS : nothing
 */
 
 void	ft_get_question_guess(int level, int *guess)
 {
-
 			ft_prompt_number_guess(level);
 			while (ft_get_input_number(guess))
 			{
-				fgetc(stdin);	
 				ft_print_header();
 				ft_prompt_number_guess(level);
 			}
+}
 
+/**
+* DESCRIPTION : function checks the input to be sure it's only digits
+* ARGS : take a pointer to the input string
+* RETURNS : An interger that is converted from the string input
+*/
+
+int	ft_check_input_is_a_digit(char *str)
+{
+	char *ptr;
+	int nbr;
+
+ptr = str;
+	while(*ptr)
+	{
+		if((*ptr < '0' ) || (*ptr > '9'))
+			return(-1);
+		ptr++;
+	}		  
+	nbr = atoi(str);
+	return (nbr);
 }
